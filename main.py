@@ -12,9 +12,9 @@ f0 = 5
 k = 100
 a = np.sin(np.pi * 2 * (f0 * R + k * R**2 / 2))
 # make the left hand side of this
-a[:int(N / 2), :][R[:int(N / 2), :] < 0.4] = -1
-a[:int(N / 2), :][R[:int(N / 2), :] < 0.3] = 1
-aa[:, int(N / 3):] = a[:, int(N / 3):]
+a[:N // 2, :][R[:N // 2, :] < 0.4] = -1
+a[:N // 2, :][R[:N // 2, :] < 0.3] = 1
+aa[:, N // 3:] = a[:, N // 3:]
 a = aa
 fig, axs = plt.subplots(2, 2, figsize=(5, 6), constrained_layout=True)
 axs[0, 0].imshow(a, interpolation='nearest', cmap='RdBu_r')
